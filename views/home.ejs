@@ -43,7 +43,8 @@
                          </p>
                     </li>
                     <li id="submissions">
-                         <button type="submit"><i class="fas fa-plus"></i>ADD TASK</button>
+                         <button type="submit"><i class="fas fa-plus"></i>ADD TASK</button>&nbsp;
+                         <button type="submit" form="del_form"><i class="fas fa-trash-alt"></i></i>DELETE TASK</button>
                     </li>
                </ul>
           </form>
@@ -57,7 +58,7 @@
                                    <input type="checkbox" name="<%=i._id%>">
                               </a>
                          <%}else{%>
-                              <a href="/manipulation/StatusUpdate/?_id=<%=i._id%>" method="get">
+                              <a href="/manipulation/StatusUpdate/?_id=<%=i._id%>" method="get" class="checked">
                                    <input type="checkbox" name="<%=i._id%>" checked>
                               </a>
                          <%}%>
@@ -74,7 +75,7 @@
                          </label>
                     </li>
                     <% } %>
-                    <button type="submit" form="del_form"><i class="fas fa-trash-alt"></i></i>DELETE TASK</button>
+                    
           </ul>
           </form>
      </section>

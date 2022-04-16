@@ -1,3 +1,4 @@
+/*importing requirements*/
 const express=require('express');
 const app=express();
 app.set('view engine','ejs');
@@ -5,6 +6,7 @@ app.set('views','./views');
 app.use(express.urlencoded());
 app.use(express.static('./assets'));
 const router=require('./routes/index');
+/*routing reqs of this type to middleware*/
 app.use('/',router);
 app.listen(8000, function(err){
     if(err){
