@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.bold{
+    font-weight: bold;
+}
+.gray{
+    color: gray;
+}
+.black{
+    color: black;
+}
+.text-center{
+    text-align: center;
+}
+#heading{
+    font-size: 1.2rem;
+    border-bottom: 2px solid grey;
+}
+body{
+     background-color: gray;
+}
+#useable-area{
+    width: 60%;
+    background-color: white;
+    margin: auto;
+    padding: 5px 0px 5px 0px;
+}
+ul{
+    list-style: none;
+}
+li{
+    border-bottom: 2px solid grey;
+    color: gray;
+    font-weight: bold;
+    padding: 1rem;
+}
+input,textarea,select{
+    border: none;
+    width: 100%;
+}
+.d-flex{
+    display: flex;
+}
+#take-input .d-flex p{
+    width: 50%;
+}
+.j-space-bet{
+    justify-content: space-between;
+}
+#display-added input{
+    width: auto;
+}
+#display-added li,#submissions{
+    width: 98%;
+    margin: auto;
+}
+#display-added label[for='Status']{
+    display: inline-block;
+    width: 97%;
+}
+button[type='submit']{
+    color: white;
+    background-color: rgb(68,68,68);
+    width: 9rem;
+    text-align: center;
+    height: 3rem;
+    border-radius: 5px;
+}
+#take-input button[type='submit']{
+    margin-left: 33%;
+}
+button[type='submit'] i{
+    padding-right: 20px;
+}
+#display-added button[type='submit']{
+    background-color: #EE351E;
+    position: absolute;
+    top:26.9%;
+    left: 50%;
+}
+#display-added button[type='submit']:hover{
+    background-color: white;
+    color: #EE351E;
+}
+button[type='submit']:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #888888;
+    background-color: white;
+    color: rgb(68,68,68);
+    font-weight: 900;
+}
+
+.m-auto{
+    margin: auto;
+}
+input[type=checkbox]:checked + label{ 
+    text-decoration: line-through;
+}
+@media screen and (max-width: 480px) {
+    
+}
+

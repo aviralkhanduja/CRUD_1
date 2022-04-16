@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/css/style.css">
+     <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"/>
+     <title>Document</title>
+</head>
+
+<body>
+     <section id="useable-area">
+          <h1 class="bold text-center black" id="heading">
+               To Do App
+          </h1>
+          <form action="/manipulation/add-task/" method="post" id="take-input">
+               <ul>
+                    <li>
+                         <label for="Description">DESCRIPTION</label><br>
+                         <textarea type="text" name="Description" placeholder="What do you need to do?" required></textarea>
+                    </li>
+                    <li class="d-flex j-space-bet">
+                         <p>
+                              <label for="Category">CATEGORY</label><br>
+                              <select name="Category" required>
+                                   <option value="">Select One!</option>
+                                   <option value="Personal">Personal</option>
+                                   <option value="Personal">Personal</option>
+                                   <option value="College">College</option>
+                                   <option value="Coding">Coding</option>
+                                   <option value="Other">Other</option>
+                              </select>
+                         </p>
+                         <p>
+                              <label for="Duedate">DUE DATE</label><br>
+                              <input type="text" name="Duedate" placeholder="yyyy-mm-dd">
+                         </p>
+                    </li>
+                    <li id="submissions">
+                         <button type="submit"><i class="fas fa-plus"></i>ADD TASK</button>
+                    </li>
+               </ul>
+          </form>
+          
+          <form action="/manipulation/del-task/" id="del_form" method="post">
+          <ul id="display-added">
+               <% for(let i of tasks_list){ %>
+                    <li>
+                         <%if(!i.Status){%>
+                              <a href="/manipulation/StatusUpdate/?_id=<%=i._id%>" method="get">
+                                   <input type="checkbox" name="<%=i._id%>">
+                              </a>
+                         <%}else{%>
+                              <a href="/manipulation/StatusUpdate/?_id=<%=i._id%>" method="get">
+                                   <input type="checkbox" name="<%=i._id%>" checked>
+                              </a>
+                         <%}%>
+                         <label for="<%=i._id%>">
+                              <div class="d-flex j-space-bet">
+                                   <p>
+                                        <%=i.Description%>
+                                   </p>
+                                   <p>
+                                        <%=i.Category%>
+                                   </p>
+                              </div>
+                              <div><%=i.Duedate%></div>
+                         </label>
+                    </li>
+                    <% } %>
+                    <button type="submit" form="del_form"><i class="fas fa-trash-alt"></i></i>DELETE TASK</button>
+          </ul>
+          </form>
+     </section>
+</body>
+
+</html>
